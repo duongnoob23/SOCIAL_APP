@@ -6,8 +6,8 @@ export default function Index() {
   const isLoggedIn = false;
 
   if (isLoggedIn) {
-    return <Redirect href="/(tabs)/home" />;
+     return <Redirect href="/story/main-story" />;
   }
 
-  return <Redirect href="/(auth)/login" />;
+  return <Redirect href="/auth/sign-in" />;
 }
