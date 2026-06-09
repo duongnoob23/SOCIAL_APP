@@ -1,0 +1,134 @@
+1. Khi bạn không biết "Bây giờ làm gì tiếp theo?": Mở file 01_roadmap_and_todo.md. Đây là file quan trọng nhất. Nó chứa danh sách công việc (Checklist), những gì đã làm, những gì đang làm dở. Mỗi buổi sáng hoặc lúc bắt đầu code, bạn chỉ cần nhìn vào đây.
+
+2. Khi bạn đụng phải một thư viện mới (Ví dụ: Expo Router thay cho React Navigation cũ): Bạn tạo file 03_libraries/expo-router.md. Trong file này, bạn ghi lại:
+
+Link docs chính thức.
+Code mẫu (Snippet) để chuyển trang.
+Code mẫu để truyền tham số.
+Các lỗi thường gặp với thư viện này.
+3. Khi bạn làm một tính năng cụ thể (Ví dụ: Màn hình Đăng nhập): Bạn ghi chú vào 04_features/authentication.md. Ghi lại luồng đi như thế nào (Flow): User nhập User/Pass -> Gọi API -> Lưu Token vào đâu -> Chuyển hướng ra sao. Lần sau đọc lại bạn sẽ hiểu ngay logic nghiệp vụ.
+
+4. Khi bạn kẹt một cái bug cả buổi chiều mới sửa được: Đừng để nó trôi đi! Ghi ngay vào 05_bugs_and_troubleshooting/bug_tracker.md. Ghi theo format: [Hiện tượng] -> [Nguyên nhân] -> [Cách fix]. Lần sau gặp lại chỉ cần Ctrl+F là ra.
+
+5. Ghi nháp hàng ngày (Daily Logs): Đôi khi bạn đang code vội, không biết nhét thông tin vào thư mục nào cho đúng, hãy ném tạm vào 02_daily_logs/2026-06-04.md. Nó giống như một cuốn sổ nháp trên bàn làm việc của bạn. Cuối tuần rảnh rỗi, bạn (hoặc tôi) có thể gom gọn kiến thức từ sổ nháp này chuyển sang các mục chính thức.
+
+Sự tiện lợi khi dùng chung với AI (Antigravity):
+Bạn không cần phải tự tay định dạng Markdown cho đẹp. Khi bạn gặp một bug và fix xong, bạn chỉ cần bảo tôi: "Tôi vừa fix xong lỗi crash khi mở Bottom Sheet do thiếu GestureHandlerRootView. Cậu ghi chú lỗi này vào file bug_tracker giúp tôi, trình bày đẹp vào nhé."
+
+Tôi sẽ tự động đọc ngữ cảnh và ghi vào file .md cho bạn với format chuẩn chỉnh.
+
+Bạn thấy cấu trúc này đã bao quát đủ nhu cầu của bạn chưa? Nếu bạn ưng ý, tôi có thể tạo luôn toàn bộ cấu trúc thư mục và các file template chuẩn (có sẵn tiêu đề) này vào dự án c:\social_app của bạn ngay bây giờ.
+
+
+
+
+
+
+////////
+////////
+////////
+////////
+
+
+
+
+
+
+bạn viết cũng đầy đủ tuy nheien tôi muốn bổ sung thêm 
+docs/
+│
+├── README.md                    # Bản đồ toàn bộ docs, đọc đầu tiên
+│
+├── journal/                     # 📅 Nhật ký hàng ngày — ghi nhanh nhất
+│   ├── 2026-06-04.md
+│   ├── 2026-06-05.md
+│   └── _template.md             # Copy paste mỗi ngày
+│
+├── decisions/                   # 🧭 Quyết định kiến trúc (ADR)
+│   ├── 001-chon-tech-stack.md
+│   ├── 002-cau-truc-folder.md
+│   └── _template.md
+│
+├── bugs/                        # 🐛 Bug đã gặp + fix
+│   ├── navigation-goback-crash.md
+│   ├── supabase-auth-token-expired.md
+│   └── _template.md
+│
+├── libraries/                   # 📦 Thư viện — hướng dẫn cách dùng trong project
+│   ├── react-navigation.md
+│   ├── zustand.md
+│   ├── supabase.md
+│   └── _template.md
+│
+├── patterns/                    # 🧩 Pattern & concept hay dùng lại
+│   ├── custom-hook-pattern.md
+│   ├── optimistic-update.md
+│   └── _template.md
+│
+└── setup/                       # ⚙️ Hướng dẫn setup môi trường
+    ├── initial-setup.md
+    ├── environment-variables.md
+    └── run-locally.md
+
+có thể viết kiểu này, lồng nhiều cấp bên trong để có thể chia nhỏ hơn chứ chỉ có 1 cấp folder thì kiểu bị nông quá, ngoài ra trong quá trình học tôi sẽ đa số là chat ở bên claude bên ngoài để học kiến thức, sau đó mới copy toàn bộ nội dung ở bên ngoài vào trong này cho bạn hệ thống (sau khi tôi đã hiểu rồi ) 
+
+
+nếu bạn hiểu rồi thì dựng base structure của docs trước đi sau đó tôi sẽ đến phần là cấu trúc của một file như nào, ví dụ 1 file .md học thư viện thì sẽ có cầu trúc như nào, file road_mmap sẽ có cấu trúc như nào 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////
+////////
+////////
+////////
+
+
+
+
+
+
+
+
+
+tôi đang bắts đầu lại một dự án react-native và việc đầu tiên là phải setup 2 phần kiến thức zustand và  mmkv , 
+
+thì tôi muốn biết kiến thức trong đoạn nầy là gì, khi mà tôi hỏi kiến thức trong đây ấy tức là khi nào dùng zustand, mmkv dùng để làm gì , có nhưng thư viện nào cùng phục vụ mục đích với 2 tháng zustand và mmkv và , ví dụ zustand phụ vụ việc gì, cso những thư viện hay công nghẹ nào tương tự cho mục đích đó, so sánh ưu nhược điểm của mấy cái cùng mục đích và quyết định vì sao dùng cái này 
+
+
+
+
+
+
+
+
+
+
+////////
+////////
+////////
+////////
+
+
+
+
+
+
+
+
+
+
+
+
+

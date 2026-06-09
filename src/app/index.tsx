@@ -1,13 +1,29 @@
-import { Redirect } from 'expo-router';
+import { ROUTES } from "@/constants/routes";
+import { useAuthStore } from "@/store/authStore";
+import { SplashScreen, useRootNavigationState, useRouter } from "expo-router";
+import React from "react";
 
-// Entry point - redirect to auth or tabs
 export default function Index() {
-  // Giả lập chưa đăng nhập -> vào auth
-  const isLoggedIn = false;
+  const { token, isHydrated } = useAuthStore();
+  const router = useRouter();
+  const navigationState = useRootNavigationState();
+  console.log("AAAA", token);
+  React.useEffect(() => {
+    // Điều kiện 1: Navigator chưa sẵn sàng → chờ
+    if (!navigationState?.key) return;
 
-  if (isLoggedIn) {
-     return <Redirect href="/story/main-story" />;
-  }
+    // Điều kiện 2: MMKV chưa load xong → chờ
+    if (!isHydrated) return;
 
-  return <Redirect href="/auth/sign-in" />;
+    const timer = setTimeout(async () => {
+      router.replace(token ? ROUTES.MAIN_STORY : ROUTES.SIGN_IN);
+      await SplashScreen.hideAsync();
+    });
+
+    // setTimeout 0ms: đẩy điều hướng ra ngoài render cycle hiện tại
+    // tránh warning "Cannot update a component while rendering a different component"
+    return () => clearTimeout(timer);
+  }, [isHydrated, navigationState, token]);
+
+  return null;
 }

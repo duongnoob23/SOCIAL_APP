@@ -6,7 +6,7 @@ export default function OnBoardingLayout() {
     <Stack screenOptions={{ headerShown: false }}>
       // Tại sao lại cso stack screen options ở đây? vì chúng ta muốn ẩn header
       của stack navigator để có thể tùy chỉnh giao diện
-      <Stack.Screen name="sign-in" />
+      <Stack.Screen name="intro-screen" />
       <Stack.Screen name="get-started" />
     </Stack>
   );
